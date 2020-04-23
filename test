@@ -1,0 +1,31 @@
+ /*
+        double macroPrecisionDenominator = 0.0;
+        double macroRecallDenominator = 0.0;
+        double microFScore = 0;
+        for (int i = 0; i < K; ++i){
+            int numberOfSamplesInKthGroupFact = 0;
+            int numberOfSamplesInKthGroupPredicted = 0;
+
+            for (int j = 0; j < K; ++j){
+                numberOfSamplesInKthGroupFact += confusionMatrix[i][j];
+                numberOfSamplesInKthGroupPredicted += confusionMatrix[j][i];
+            }
+
+            int numberOfTruePositive = confusionMatrix[i][i];
+            int numberOfFalsePositive = numberOfSamplesInKthGroupPredicted - confusionMatrix[i][i];
+            int numberOfFalseNegative = numberOfSamplesInKthGroupFact - confusionMatrix[i][i];
+
+            double microRecall = (double)numberOfTruePositive / (numberOfTruePositive + numberOfFalseNegative);
+            double microPrecision = (double)numberOfTruePositive / (numberOfTruePositive + numberOfFalsePositive);
+
+            microFScore += 2 * microPrecision * microRecall / (microPrecision + microRecall);
+
+            macroPrecisionDenominator += (double)confusionMatrix[i][i] / numberOfSamplesInKthGroupFact;
+            macroRecallDenominator += (double) confusionMatrix[i][i] / numberOfSamplesInKthGroupPredicted;
+        }
+
+        microFScore = microFScore / K;
+
+        double macroFScore = 2.0 * macroPrecisionDenominator * macroRecallDenominator / K / (macroPrecisionDenominator + macroRecallDenominator);
+        System.out.println(macroFScore);
+        System.out.println(microFScore);//*/
